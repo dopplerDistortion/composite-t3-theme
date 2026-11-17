@@ -4,14 +4,7 @@ A dark theme for [T3 Code](https://t3.codes) that applies Composite, the goksen.
 
 Tested with T3 Code 0.1.10 (web and desktop). The theme is dark only.
 
-![A thread with a reply, a table and the dithered background](docs/screenshots/thread-chat.jpg)
-
-| | |
-|---|---|
-| ![The Icon set in a thread](docs/screenshots/thread-icons.jpg) | ![A new thread with the Display title](docs/screenshots/new-thread.jpg) |
-| ![Settings with crop marks, switches and an open select](docs/screenshots/settings.jpg) | ![Providers with the Claude and Codex glyphs](docs/screenshots/providers.jpg) |
-
-The screenshots come from a real workspace. Project names, other thread titles and the machine name are redacted with block characters.
+![Eleven details of the theme in a bento grid: the palette, the selected row, the busy mark, settings, a table, code, a quote, the model picker, the provider glyphs and the red send and stop buttons](docs/showcase.png)
 
 ## What it changes
 
@@ -22,6 +15,17 @@ The screenshots come from a real workspace. Project names, other thread titles a
 - **Motion.** Every change is a hard cut with `steps()`. A busy indicator is an amber frame that blinks; a thread that needs you shows a solid amber square. Under reduced motion, every effect shows its final state.
 - **Icons.** 43 icons from the goksen.ing Icon set (Streamline Sharp Duo Free, redrawn in two inks with an ordered dither), plus provider glyphs for Claude and Codex.
 - **Background.** One dithered frame of a wave, in Ink, Card and Well, behind the chat.
+
+## Full screens
+
+![A thread with a reply, a table and the dithered background](docs/screenshots/thread-chat.jpg)
+
+| | |
+|---|---|
+| ![The Icon set in a thread](docs/screenshots/thread-icons.jpg) | ![A new thread with the Display title](docs/screenshots/new-thread.jpg) |
+| ![Settings with crop marks, switches and an open select](docs/screenshots/settings.jpg) | ![Providers with the Claude and Codex glyphs](docs/screenshots/providers.jpg) |
+
+The full screens come from a real workspace. Project names, other thread titles and the machine name are redacted with block characters. The bento above comes from a separate project with the other threads hidden, so no block characters cover it. `scripts/showcase.py` crops it from six window captures.
 
 ## Install
 
@@ -99,6 +103,16 @@ python3 -I scripts/dither.py dist/composite.png 2560 1600 3.0 5 2 0b0b0c,0b0b0c,
 ```
 
 The arguments are: output, width, height, time, levels, scale, and the palette from the darkest level to the brightest.
+
+### Showcase
+
+`docs/showcase.png` is a bento of eleven crops. Capture six windows of T3 Code at 1×, 1112×997, with the theme on: a thread, a draft in the composer, the model picker, Settings > General, Settings > Providers, and a thread while it works. Save them as `s1.png` to `s6.png`, then run:
+
+```sh
+python3 scripts/showcase.py path/to/captures   # needs Pillow and Google Chrome
+```
+
+The crop boxes are in `COLUMNS` at the top of the script. Remove private text from the captures before you run it; the script only crops.
 
 ## Fragile selectors
 

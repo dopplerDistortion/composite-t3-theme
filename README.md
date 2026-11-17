@@ -39,6 +39,29 @@ scripts/install.sh
 
 Pick **goksen.ing** in T3 Code's appearance settings. If the desktop app does not show the change, restart it.
 
+### Install with an AI agent
+
+Paste this prompt into a coding agent, for example a thread in T3 Code:
+
+```text
+Install the goksen.ing theme for T3 Code from
+https://github.com/dopplerDistortion/goksen.ing-t3-theme
+
+1. Clone the repo into a temporary folder, or pull it if I already have it.
+2. Check if the fonts Geist Mono and Martian Mono are installed. If a font
+   is missing, ask me before you install it. On macOS, the command is:
+   brew install --cask font-geist-mono font-martian-mono
+3. Run scripts/install.sh. It copies dist/goksen-ing.json and
+   dist/goksen-ing.png into T3 Code's themes folder
+   (default: ~/.t3/userdata/themes).
+4. If you have T3 Code's t3_theme_set tool, switch to the theme
+   "goksen-ing" with the appearance "dark". If you do not have it, tell me
+   to pick "goksen.ing" in T3 Code's appearance settings.
+5. Do not change other themes, and do not edit dist/goksen-ing.json.
+6. Tell me what you did. If the desktop app does not show the theme, tell me
+   to restart it.
+```
+
 ## Change the theme
 
 Edit the source, then build. Do not edit `dist/goksen-ing.json` by hand.

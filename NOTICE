@@ -1,0 +1,11 @@
+This theme contains icons derived from Streamline Sharp Duo Free
+by Streamline (https://www.streamlinehq.com), licensed under the
+Creative Commons Attribution 4.0 International License
+(https://creativecommons.org/licenses/by/4.0/).
+
+Changes: the icons are redrawn in two inks, with an ordered dither in place
+of the pack's second colour, and are embedded as CSS masks.
+
+The glyphs in icons/own.json (copy, folder, reply, git-branch, and the Claude
+and Codex provider glyphs) are drawn for this theme. They are not copies of
+any brand's logo.

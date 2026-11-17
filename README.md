@@ -1,6 +1,6 @@
-# goksen.ing for T3 Code
+# Composite for T3 Code
 
-A dark theme for [T3 Code](https://t3.codes) that applies the goksen.ing design system: bone on near-black, one red, square corners, 1 px rules, crop marks and steps-only motion.
+A dark theme for [T3 Code](https://t3.codes) that applies Composite, the goksen.ing design system: bone on near-black, one red, square corners, 1 px rules, crop marks and steps-only motion.
 
 Tested with T3 Code 0.1.10 (web and desktop). The theme is dark only.
 
@@ -37,7 +37,7 @@ Then copy the theme into T3 Code's themes folder:
 scripts/install.sh
 ```
 
-Pick **goksen.ing** in T3 Code's appearance settings. If the desktop app does not show the change, restart it.
+Pick **Composite** in T3 Code's appearance settings. If the desktop app does not show the change, restart it.
 
 ### Install with an AI agent
 
@@ -45,36 +45,36 @@ Paste this prompt into a coding agent, for example a thread in T3 Code:
 
 ```text
 Install the goksen.ing theme for T3 Code from
-https://github.com/dopplerDistortion/goksen.ing-t3-theme
+https://github.com/dopplerDistortion/composite-t3-theme
 
 1. Clone the repo into a temporary folder, or pull it if I already have it.
 2. Check if the fonts Geist Mono and Martian Mono are installed. If a font
    is missing, ask me before you install it. On macOS, the command is:
    brew install --cask font-geist-mono font-martian-mono
-3. Run scripts/install.sh. It copies dist/goksen-ing.json and
-   dist/goksen-ing.png into T3 Code's themes folder
+3. Run scripts/install.sh. It copies dist/composite.json and
+   dist/composite.png into T3 Code's themes folder
    (default: ~/.t3/userdata/themes).
 4. If you have T3 Code's t3_theme_set tool, switch to the theme
-   "goksen-ing" with the appearance "dark". If you do not have it, tell me
-   to pick "goksen.ing" in T3 Code's appearance settings.
-5. Do not change other themes, and do not edit dist/goksen-ing.json.
+   "composite" with the appearance "dark". If you do not have it, tell me
+   to pick "Composite" in T3 Code's appearance settings.
+5. Do not change other themes, and do not edit dist/composite.json.
 6. Tell me what you did. If the desktop app does not show the theme, tell me
    to restart it.
 ```
 
 ## Change the theme
 
-Edit the source, then build. Do not edit `dist/goksen-ing.json` by hand.
+Edit the source, then build. Do not edit `dist/composite.json` by hand.
 
 | File | What it holds |
 |---|---|
-| `src/goksen-ing.css` | The readable CSS. |
+| `src/composite.css` | The readable CSS. |
 | `src/theme.json` | The theme name, appearance and colour roles. |
 | `icons/map.json` | Which T3 Code icon gets which Icon set icon. A key is a Lucide name, or a raw attribute selector for a provider glyph. |
 | `icons/own.json` | Glyphs drawn for this theme on the same 24-unit grid. |
 
 ```sh
-python3 -I scripts/build.py           # write dist/goksen-ing.json
+python3 -I scripts/build.py           # write dist/composite.json
 python3 -I scripts/build.py --check   # fail if dist is out of date
 scripts/install.sh
 ```
@@ -83,7 +83,7 @@ T3 Code accepts at most 50,000 characters of theme CSS. The build minifies the C
 
 ### Icons
 
-The icon block in `src/goksen-ing.css` is generated. It sits between `/* @icons:start */` and `/* @icons:end */`. To rebuild it from the goksen.ing repo:
+The icon block in `src/composite.css` is generated. It sits between `/* @icons:start */` and `/* @icons:end */`. To rebuild it from the goksen.ing repo:
 
 ```sh
 python3 -I scripts/icons.py --set ../goksen.ing/src/lib/icons/set.ts
@@ -95,14 +95,14 @@ A theme cannot change T3 Code's markup, so each icon is a CSS mask with a `data:
 ### Background
 
 ```sh
-python3 -I scripts/dither.py dist/goksen-ing.png 2560 1600 3.0 5 2 0b0b0c,0b0b0c,131314,131314,1c1c1d
+python3 -I scripts/dither.py dist/composite.png 2560 1600 3.0 5 2 0b0b0c,0b0b0c,131314,131314,1c1c1d
 ```
 
 The arguments are: output, width, height, time, levels, scale, and the palette from the darkest level to the brightest.
 
 ## Fragile selectors
 
-T3 Code documents a short list of stable selectors. Some rules need more, such as Tailwind class names and status marks. These rules are in the block marked `FRAGILE` at the end of `src/goksen-ing.css`. Check that block after each T3 Code update. If a rule stops matching, that part shows T3 Code's default style again; nothing breaks.
+T3 Code documents a short list of stable selectors. Some rules need more, such as Tailwind class names and status marks. These rules are in the block marked `FRAGILE` at the end of `src/composite.css`. Check that block after each T3 Code update. If a rule stops matching, that part shows T3 Code's default style again; nothing breaks.
 
 ## Credits
 

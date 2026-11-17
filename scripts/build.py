@@ -1,10 +1,10 @@
-"""Build dist/goksen-ing.json from src/theme.json and src/goksen-ing.css.
+"""Build dist/composite.json from src/theme.json and src/composite.css.
 
 T3 Code holds at most 50,000 characters of theme CSS, so the CSS is minified:
 comments and meaningless whitespace go; strings (the icons' data: URIs) and the
 space of a descendant selector (`.composer-tiptap :focus-visible`) stay.
 
-    python3 -I scripts/build.py          # write dist/goksen-ing.json
+    python3 -I scripts/build.py          # write dist/composite.json
     python3 -I scripts/build.py --check  # fail if dist is out of date
 """
 import json
@@ -55,18 +55,18 @@ def minify(css):
 
 def main():
     theme = json.loads((ROOT / "src/theme.json").read_text())
-    theme["css"] = minify((ROOT / "src/goksen-ing.css").read_text())
+    theme["css"] = minify((ROOT / "src/composite.css").read_text())
     if len(theme["css"]) > LIMIT:
         raise SystemExit(f"theme CSS is {len(theme['css'])} characters; T3 Code's limit is {LIMIT}")
     out = json.dumps(theme, indent=2) + "\n"
-    dist = ROOT / "dist/goksen-ing.json"
+    dist = ROOT / "dist/composite.json"
     if "--check" in sys.argv:
         if not dist.exists() or dist.read_text() != out:
-            raise SystemExit("dist/goksen-ing.json is out of date: run scripts/build.py")
+            raise SystemExit("dist/composite.json is out of date: run scripts/build.py")
         print("dist is up to date")
         return
     dist.write_text(out)
-    print(f"dist/goksen-ing.json: {len(theme['css'])} of {LIMIT} characters")
+    print(f"dist/composite.json: {len(theme['css'])} of {LIMIT} characters")
 
 
 if __name__ == "__main__":

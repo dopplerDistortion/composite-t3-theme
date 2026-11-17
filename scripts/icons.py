@@ -1,4 +1,4 @@
-"""Write the icon block of src/goksen-ing.css from the goksen.ing Icon set.
+"""Write the icon block of src/composite.css from the goksen.ing Icon set.
 
 T3 Code draws Lucide SVGs inline, and a theme can't change markup. So each mapped
 icon gets one data: SVG mask, and the svg element paints its own colour through it:
@@ -98,7 +98,7 @@ def main():
     p.add_argument("--set", required=True)
     p.add_argument("--map", default=ROOT / "icons/map.json")
     p.add_argument("--own", default=ROOT / "icons/own.json")
-    p.add_argument("--css", default=ROOT / "src/goksen-ing.css")
+    p.add_argument("--css", default=ROOT / "src/composite.css")
     a = p.parse_args()
     icons = parse_set(a.set)
     icons.update(json.loads(Path(a.own).read_text()))

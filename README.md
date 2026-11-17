@@ -18,14 +18,14 @@ Tested with T3 Code 0.1.10 (web and desktop). The theme is dark only.
 
 ## Full screens
 
-![A thread with a reply, a table and the dithered background](docs/screenshots/thread-chat.jpg)
+![A thread with a numbered list, a table and the dithered background](docs/screenshots/thread-chat.jpg)
 
 | | |
 |---|---|
-| ![The Icon set in a thread](docs/screenshots/thread-icons.jpg) | ![A new thread with the Display title](docs/screenshots/new-thread.jpg) |
+| ![The Icon set as a contact sheet in a thread, with the project panel open](docs/screenshots/thread-icons.jpg) | ![A new thread with the Display title](docs/screenshots/new-thread.jpg) |
 | ![Settings with crop marks, switches and an open select](docs/screenshots/settings.jpg) | ![Providers with the Claude and Codex glyphs](docs/screenshots/providers.jpg) |
 
-The full screens come from a real workspace. Project names, other thread titles and the machine name are redacted with block characters. The bento above comes from a separate project with the other threads hidden, so no block characters cover it. `scripts/showcase.py` crops it from six window captures.
+All screens come from a separate project with the other threads hidden, so nothing is redacted. `scripts/showcase.py` crops the bento above from six window captures.
 
 ## Install
 
